@@ -1,0 +1,5 @@
+Checklist_AV1
+
+Ingestão: ( ) Em progresso / (x) Finalizado / ( ) Pendente
+Armazenamento: ( ) Em progresso / (x) Finalizado / ( ) Pendente
+Transformação: ( ) Em progresso / (x) Finalizado / ( ) Pendente
