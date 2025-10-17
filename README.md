@@ -4,7 +4,7 @@
 ### Detecção de Transações Fraudulentas com Cartão de Crédito  
 
 ## Objetivo  
-Este projeto foi desenvolvido como parte da disciplina **Fundamentos de Big Data (AV1)**.  
+Este projeto foi desenvolvido como parte da disciplina **Fundamentos de Big Data**.  
 O objetivo é construir um **pipeline de dados** completo da ingestão até a transformação,  
 usando um conjunto de transações com cartões de crédito para detectar **padrões de fraudes**.
 
@@ -58,8 +58,6 @@ O projeto usa um **ETL em batch** (não streaming) no Google Colab:
 - **Transformação:** normalização das colunas `Time` e `Amount` com `MinMaxScaler`.  
 - **Armazenamento:** salvamento do resultado em `/dados/transformacao/creditcard_transformado.csv`.  
 - **Visualização:** gráficos mostrando as distribuições antes e depois da normalização.  
-
-Essa estrutura reproduz as três primeiras etapas de um pipeline de Big Data (AV1).
 
 ---
 
