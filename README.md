@@ -26,8 +26,7 @@ seguindo as três etapas principais de um fluxo de Big Data:
 
 ## Diagrama do Pipeline  
 
-Fluxo:  
-**Dataset → Ingestão → Armazenamento → Transformação → Output (Dataset Transformado)**  
+![Diagrama do Fluxo de Dados ETL](documentacao/pipeline.jpeg)
 
 ---
 
