@@ -74,6 +74,7 @@ seguindo as três etapas principais de um fluxo de Big Data:
 * Pré-processamento: As colunas 'Time' e 'Amount' foram escaladas usando o RobustScaler. Esta técnica foi escolhida por ser menos sensível a outliers extremos, comum em dados de transações.
 
 Figura 1 - Visualização de Features (Subamostra Balanceada)
+
 ![Features](documentacao/features.png)
 
 * Após criar uma subamostra balanceada (Figura 1) (new_df) para fins exploratórios, a distribuição de features como V10, V12 e V14 para transações fraudulentas (Classe 1) mostrou-se fortemente enviesada (negativamente), indicando que essas variáveis são preditores cruciais de fraude.
@@ -86,19 +87,25 @@ Figura 1 - Visualização de Features (Subamostra Balanceada)
 3. Performance dos modelos (Gold)
 * Curvas ROC dos modelos
 Figura 2 - Curva ROC AR
+
 ![AR](documentacao/AR.png)
 
 Figura 3 - Curvas ROC do RF e do XGBoost
+
 ![roc](documentacao/ROC_RF_XGB.png)
 
 * Random Forest
+
 ![rf](documentacao/RF.png)
 
 * XGBoost
+
 ![xgb](documentacao/XGB.png)
 
 O XGBoost entregou o melhor desempenho geral, com a maior pontuação de ROC AUC (0.9820) e o maior Recall (91.84%) para a classe de fraude.
+
 O Recall superior a 90% no XGBoost indica que mais de 9 em cada 10 transações fraudulentas foram corretamente capturadas.
+
 A curva ROC comparativa (Random Forest vs. XGBoost) confirma que ambos os modelos performam muito acima do chute aleatório, com o XGBoost apresentando uma área sob a curva (AUC) ligeiramente maior, solidificando-o como a escolha ideal para o modelo final.
 
 ---
