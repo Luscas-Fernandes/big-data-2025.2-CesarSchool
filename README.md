@@ -5,7 +5,33 @@
 
 ## Introdução
 
+O presente projeto tem como tema central a Detecção de Fraudes em Transações de Cartão de Crédito, utilizando um dataset real de operações feitas por clientes europeus em setembro de 2013. O objetivo principal é desenvolver um pipeline de dados robusto capaz de identificar automaticamente transações suspeitas de fraude.
+
+O dataset apresenta desafios críticos:
+
+*Anonimato dos Dados: As variáveis principais (V1 a V28) foram transformadas pela Análise de Componentes Principais (PCA), o que obscurece o significado específico das features.
+
+*Desbalanceamento Extremo: A classe de interesse (fraude) é a minoritária, representando menos de 0.2% do total das transações (492 fraudes em mais de 284 mil transações normais).
+
 ## Motivação
+
+A relevância do projeto reside na simulação de um problema típico de Big Data e sua aplicação prática no setor financeiro.
+
+### O Desafio em Contexto de Big Data
+Mesmo sendo uma amostra de apenas dois dias, o dataset reflete a complexidade de um sistema real, onde:
+
+*Milhares de transações acontecem a cada segundo e precisam ser analisadas em tempo real para evitar fraudes.
+
+*O desafio é o volume de informações, a velocidade com que os dados chegam e a complexidade das variáveis que precisam ser processadas.
+
+*É um caso onde a quantidade de dados legítimos é enorme comparada às poucas fraudes.
+
+### Justificativa Técnica (Pré-Processamento)
+A escolha das técnicas de transformação é estratégica para a modelagem:
+
+*A normalização das features Time e Amount é crucial, pois elas não foram transformadas pelo PCA.
+
+*O RobustScaler é utilizado para a normalização, pois é mais resistente à grande quantidade de outliers e à distribuição assimétrica da coluna Amount.
 
 ## Objetivo do Projeto 
 Este projeto foi desenvolvido como parte da disciplina **Fundamentos de Big Data**.  
