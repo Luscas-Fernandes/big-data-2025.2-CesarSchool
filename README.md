@@ -49,10 +49,13 @@ seguindo as três etapas principais de um fluxo de Big Data:
 
 | Etapa | Descrição | Ferramentas |
 |-------|------------|-------------|
-| **Ingestão** | Leitura completa do dataset `creditcard.csv` (Kaggle) e verificação de consistência (shape, info, nulos, classes). | Python + Pandas |
-| **Armazenamento** | Organização dos arquivos em diretórios no Google Drive (`/BigData/dados/`). | Google Drive |
-| **Transformação** | Normalização das colunas `Time` e `Amount` com `MinMaxScaler` (faixa [0,1]). | Scikit-learn |
-| **Visualização** | Histogramas das distribuições antes e depois da normalização. | Matplotlib / Seaborn |
+| **Ingestão & Validação** | Leitura completa do dataset `creditcard.csv` (Kaggle) e verificação de consistência (shape, info, nulos, classes). | Python + Pandas | BRONZE |
+| **Armazenamento** | Organização dos arquivos em diretórios no Google Drive (`/BigData/dados/`). | Google Drive | BRONZE |
+| **Transformação** | Normalização das colunas Time e Amount com RobustScaler (melhor para dados com outliers).| Scikit-learn | SILVER |
+| **Limpeza de Features** | Remoção das colunas originais (Time, Amount) após o scaling e ordenação temporal dos dados. | Matplotlib / Seaborn | SILVER |
+| **Preparo ML (Features/Target)** | Definição das features processadas (X) e do target (y), e divisão temporal em Treino/Teste. | Pandas, Scikit-learn | GOLD |
+| **Modelagem e Otimização** | Implementação de modelos robustos (Random Forest, XGBoost), configurados com pesos de classe (e.g., scale_pos_weight) para lidar com o desequilíbrio. | Scikit-learn, XGBoost | GOLD |
+| **Avaliação** | Cálculo de ROC AUC e análise detalhada do Recall da Classe 1 (Fraude) para mensurar a eficácia. | Scikit-learn | GOLD |
 
 ---
 
