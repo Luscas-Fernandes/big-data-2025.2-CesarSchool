@@ -68,7 +68,7 @@ seguindo as três etapas principais de um fluxo de Big Data:
 
 ## Resultados e Visualizações
 
-1. Análise exploratória (Bronze/Silver)
+### Análise exploratória (Bronze/Silver)
 * Desequilíbrio Crítico: O dataset original apresentou um desequilíbrio de classes extremo, com apenas 0.17% das transações classificadas como fraude (Classe 1). Isso define a necessidade de técnicas de ensemble especializadas.
 
 * Pré-processamento: As colunas 'Time' e 'Amount' foram escaladas usando o RobustScaler. Esta técnica foi escolhida por ser menos sensível a outliers extremos, comum em dados de transações.
@@ -79,12 +79,12 @@ Figura 1 - Visualização de Features (Subamostra Balanceada)
 
 * Após criar uma subamostra balanceada (Figura 1) (new_df) para fins exploratórios, a distribuição de features como V10, V12 e V14 para transações fraudulentas (Classe 1) mostrou-se fortemente enviesada (negativamente), indicando que essas variáveis são preditores cruciais de fraude.
 
-2. Separação de classes
+### Separação de classes
 * Redução de Dimensionalidade (PoC): As técnicas de redução de dimensionalidade (t-SNE, PCA e Truncated SVD) foram aplicadas à subamostra balanceada.
 
 * Os gráficos de dispersão resultantes confirmaram que, após o balanceamento, as transações de fraude e não-fraude formam clusters distintos. Isso sugere que os modelos têm capacidade real de distinguir as classes usando as features fornecidas (V1-V28).
   
-3. Performance dos modelos (Gold)
+### Performance dos modelos (Gold)
 * Curvas ROC dos modelos
   
 Figura 2 - Curva ROC AR
