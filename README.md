@@ -86,6 +86,7 @@ Figura 1 - Visualização de Features (Subamostra Balanceada)
   
 3. Performance dos modelos (Gold)
 * Curvas ROC dos modelos
+  
 Figura 2 - Curva ROC AR
 
 ![AR](documentacao/AR.png)
@@ -96,9 +97,13 @@ Figura 3 - Curvas ROC do RF e do XGBoost
 
 * Random Forest
 
+Figura 4 - Resultados Random Forest
+
 ![rf](documentacao/RF.png)
 
 * XGBoost
+
+Figura 5 - Resultados XGBoost
 
 ![xgb](documentacao/XGB.png)
 
