@@ -26,17 +26,19 @@ Mesmo sendo uma amostra de apenas dois dias, o dataset reflete a complexidade de
 
 * É um caso onde a quantidade de dados legítimos é enorme comparada às poucas fraudes.
 
-### Justificativa Técnica (Pré-Processamento)
-A escolha das técnicas de transformação é estratégica para a modelagem:
-
-*A normalização das features Time e Amount é crucial, pois elas não foram transformadas pelo PCA.
-
-*O RobustScaler é utilizado para a normalização, pois é mais resistente à grande quantidade de outliers e à distribuição assimétrica da coluna Amount.
 
 ## Objetivo do Projeto 
-Este projeto foi desenvolvido como parte da disciplina **Fundamentos de Big Data**.  
-O objetivo é construir um **pipeline de dados** completo da ingestão até a transformação,  
-usando Machine Learning em um conjunto de transações com cartões de crédito para detectar **padrões de fraudes**.
+O principal objetivo deste projeto é construir um modelo de machine learning capaz de detectar com precisão transações fraudulentas (Classe 1) em um dataset de cartões de crédito, superando o desafio do extremo desequilíbrio de classes (onde as fraudes são eventos raros, representando apenas 0.17% das transações).
+
+O projeto busca alcançar isso através das seguintes etapas-chave:
+
+* Pré-processamento de Dados: Padronização de features (como 'Time' e 'Amount') usando o RobustScaler.
+
+* Tratamento de Desequilíbrio: Utilização de técnicas como subamostragem (undersampling) e pesos de classe balanceados (class_weight='balanced') para permitir que os modelos aprendam efetivamente com a minoria de casos de fraude.
+
+* Análise de Features e Visualização: Uso de técnicas de redução de dimensionalidade (t-SNE, PCA, Truncated SVD) para visualizar a separabilidade das classes no espaço de features.
+
+* Modelagem e Otimização: Avaliação e implementação de modelos de classificação (como Regressão Logística, Random Forest e XGBoost) focados em métricas de desempenho que priorizem a detecção da classe minoritária (como ROC AUC e Recall).
 
 ---
 
