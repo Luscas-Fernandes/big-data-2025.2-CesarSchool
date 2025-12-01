@@ -138,7 +138,7 @@ O pipeline de dados estabelecido (Bronze $\rightarrow$ Silver $\rightarrow$ Gold
 ## ⚙️ Tecnologias Utilizadas  
 - **Python** – linguagem principal de manipulação e análise de dados.  
 - **Pandas** – leitura, exploração e manipulação tabular.  
-- **Scikit-learn** – normalização com `MinMaxScaler`.  
+- **Scikit-learn** – normalização robusta com `RobustScaler`. 
 - **Matplotlib / Seaborn** – visualização de distribuições.  
 - **Google Drive + Colab** – ambiente de execução e armazenamento.
 
@@ -151,17 +151,6 @@ O pipeline de dados estabelecido (Bronze $\rightarrow$ Silver $\rightarrow$ Gold
 | Armazenamento distribuído | AWS ou Databricks | Para dados em nuvem com alta disponibilidade. |
 | Processamento em larga escala | Apache Spark | Permite processamento paralelo de grandes volumes. |
 | Visualização de insights | Power BI | Dashboards e monitoramento em tempo real. |
-
----
-
-## Arquitetura Parcial Implementada (Batch)  
-
-O projeto usa um **ETL em batch** (não streaming) no Google Colab:  
-
-- **Ingestão:** leitura direta do CSV (`/content/drive/MyDrive/BigData/creditcard.csv`).  
-- **Transformação:** normalização das colunas `Time` e `Amount` com `MinMaxScaler`.  
-- **Armazenamento:** salvamento do resultado em `/dados/transformacao/creditcard_transformado.csv`.  
-- **Visualização:** gráficos mostrando as distribuições antes e depois da normalização.  
 
 ---
 
