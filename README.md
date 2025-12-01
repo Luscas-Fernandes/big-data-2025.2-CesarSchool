@@ -3,10 +3,42 @@
 ## Projeto em Fundamentos de Big Data  
 ### Detecção de Transações Fraudulentas com Cartão de Crédito  
 
-## Objetivo  
-Este projeto foi desenvolvido como parte da disciplina **Fundamentos de Big Data**.  
-O objetivo é construir um **pipeline de dados** completo da ingestão até a transformação,  
-usando um conjunto de transações com cartões de crédito para detectar **padrões de fraudes**.
+## Introdução
+
+O presente projeto tem como tema central a Detecção de Fraudes em Transações de Cartão de Crédito, utilizando um dataset real de operações feitas por clientes europeus em setembro de 2013. O objetivo principal é desenvolver um pipeline de dados robusto capaz de identificar automaticamente transações suspeitas de fraude.
+
+O dataset apresenta desafios críticos:
+
+* Anonimato dos Dados: As variáveis principais (V1 a V28) foram transformadas pela Análise de Componentes Principais (PCA), o que obscurece o significado específico das features.
+
+* Desbalanceamento Extremo: A classe de interesse (fraude) é a minoritária, representando menos de 0.2% do total das transações (492 fraudes em mais de 284 mil transações normais).
+
+## Motivação
+
+A relevância do projeto reside na simulação de um problema típico de Big Data e sua aplicação prática no setor financeiro.
+
+### O Desafio em Contexto de Big Data
+Mesmo sendo uma amostra de apenas dois dias, o dataset reflete a complexidade de um sistema real, onde:
+
+* Milhares de transações acontecem a cada segundo e precisam ser analisadas em tempo real para evitar fraudes.
+
+* O desafio é o volume de informações, a velocidade com que os dados chegam e a complexidade das variáveis que precisam ser processadas.
+
+* É um caso onde a quantidade de dados legítimos é enorme comparada às poucas fraudes.
+
+
+## Objetivo do Projeto 
+O principal objetivo deste projeto é construir um modelo de machine learning capaz de detectar com precisão transações fraudulentas (Classe 1) em um dataset de cartões de crédito, superando o desafio do extremo desequilíbrio de classes (onde as fraudes são eventos raros, representando apenas 0.17% das transações).
+
+O projeto busca alcançar isso através das seguintes etapas-chave:
+
+* Pré-processamento de Dados: Padronização de features (como 'Time' e 'Amount') usando o RobustScaler.
+
+* Tratamento de Desequilíbrio: Utilização de técnicas como subamostragem (undersampling) e pesos de classe balanceados (class_weight='balanced') para permitir que os modelos aprendam efetivamente com a minoria de casos de fraude.
+
+* Análise de Features e Visualização: Uso de técnicas de redução de dimensionalidade (t-SNE, PCA, Truncated SVD) para visualizar a separabilidade das classes no espaço de features.
+
+* Modelagem e Otimização: Avaliação e implementação de modelos de classificação (como Regressão Logística, Random Forest e XGBoost) focados em métricas de desempenho que priorizem a detecção da classe minoritária (como ROC AUC e Recall).
 
 ---
 
@@ -15,18 +47,30 @@ usando um conjunto de transações com cartões de crédito para detectar **padr
 O pipeline foi implementado em **ambiente simulado (Google Colab + Google Drive)**,  
 seguindo as três etapas principais de um fluxo de Big Data:
 
-| Etapa | Descrição | Ferramentas |
-|-------|------------|-------------|
-| **Ingestão** | Leitura completa do dataset `creditcard.csv` (Kaggle) e verificação de consistência (shape, info, nulos, classes). | Python + Pandas |
-| **Armazenamento** | Organização dos arquivos em diretórios no Google Drive (`/BigData/dados/`). | Google Drive |
-| **Transformação** | Normalização das colunas `Time` e `Amount` com `MinMaxScaler` (faixa [0,1]). | Scikit-learn |
-| **Visualização** | Histogramas das distribuições antes e depois da normalização. | Matplotlib / Seaborn |
+| Etapa | Descrição | Ferramentas | Camada |
+|-------|------------|-------------|--------|
+| **Ingestão & Validação** | Leitura completa do dataset `creditcard.csv` (Kaggle) e verificação de consistência (shape, info, nulos, classes). | Python + Pandas | BRONZE |
+| **Armazenamento** | Organização dos arquivos em diretórios no Google Drive (`/BigData/dados/`). | Google Drive | BRONZE |
+| **Transformação** | Normalização das colunas Time e Amount com RobustScaler (melhor para dados com outliers).| Scikit-learn | SILVER |
+| **Limpeza de Features** | Remoção das colunas originais (Time, Amount) após o scaling e ordenação temporal dos dados. | Matplotlib / Seaborn | SILVER |
+| **Preparo ML (Features/Target)** | Definição das features processadas (X) e do target (y), e divisão temporal em Treino/Teste. | Pandas, Scikit-learn | GOLD |
+| **Modelagem e Otimização** | Implementação de modelos robustos (Random Forest, XGBoost), configurados com pesos de classe (e.g., scale_pos_weight) para lidar com o desequilíbrio. | Scikit-learn, XGBoost | GOLD |
+| **Avaliação** | Cálculo de ROC AUC e análise detalhada do Recall da Classe 1 (Fraude) para mensurar a eficácia. | Scikit-learn | GOLD |
 
 ---
 
 ## Diagrama do Pipeline  
 
 ![Diagrama do Fluxo de Dados ETL](documentacao/pipeline.jpeg)
+
+
+---
+
+## Resultados e Visualizações
+
+---
+
+## Conclusões
 
 ---
 
