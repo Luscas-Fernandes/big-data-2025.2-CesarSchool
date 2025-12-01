@@ -9,9 +9,9 @@ O presente projeto tem como tema central a Detecção de Fraudes em Transações
 
 O dataset apresenta desafios críticos:
 
-*Anonimato dos Dados: As variáveis principais (V1 a V28) foram transformadas pela Análise de Componentes Principais (PCA), o que obscurece o significado específico das features.
+* Anonimato dos Dados: As variáveis principais (V1 a V28) foram transformadas pela Análise de Componentes Principais (PCA), o que obscurece o significado específico das features.
 
-*Desbalanceamento Extremo: A classe de interesse (fraude) é a minoritária, representando menos de 0.2% do total das transações (492 fraudes em mais de 284 mil transações normais).
+* Desbalanceamento Extremo: A classe de interesse (fraude) é a minoritária, representando menos de 0.2% do total das transações (492 fraudes em mais de 284 mil transações normais).
 
 ## Motivação
 
@@ -20,11 +20,11 @@ A relevância do projeto reside na simulação de um problema típico de Big Dat
 ### O Desafio em Contexto de Big Data
 Mesmo sendo uma amostra de apenas dois dias, o dataset reflete a complexidade de um sistema real, onde:
 
-*Milhares de transações acontecem a cada segundo e precisam ser analisadas em tempo real para evitar fraudes.
+* Milhares de transações acontecem a cada segundo e precisam ser analisadas em tempo real para evitar fraudes.
 
-*O desafio é o volume de informações, a velocidade com que os dados chegam e a complexidade das variáveis que precisam ser processadas.
+* O desafio é o volume de informações, a velocidade com que os dados chegam e a complexidade das variáveis que precisam ser processadas.
 
-*É um caso onde a quantidade de dados legítimos é enorme comparada às poucas fraudes.
+* É um caso onde a quantidade de dados legítimos é enorme comparada às poucas fraudes.
 
 ### Justificativa Técnica (Pré-Processamento)
 A escolha das técnicas de transformação é estratégica para a modelagem:
