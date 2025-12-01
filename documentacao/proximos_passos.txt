@@ -1,6 +1,0 @@
-- Arquitetura medalhão, silver para gold
-- Ajustar diagrama de pipeline
-- Modelo de detecção e previsão de anomalia
-- Ajuste de normalização e preprocessamento
-- Possível tecnologia paga para melhorar processo.
-- Ajuste divisão de tarefas
