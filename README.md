@@ -3,10 +3,14 @@
 ## Projeto em Fundamentos de Big Data  
 ### Detecção de Transações Fraudulentas com Cartão de Crédito  
 
-## Objetivo  
+## Introdução
+
+## Motivação
+
+## Objetivo do Projeto 
 Este projeto foi desenvolvido como parte da disciplina **Fundamentos de Big Data**.  
 O objetivo é construir um **pipeline de dados** completo da ingestão até a transformação,  
-usando um conjunto de transações com cartões de crédito para detectar **padrões de fraudes**.
+usando Machine Learning em um conjunto de transações com cartões de crédito para detectar **padrões de fraudes**.
 
 ---
 
@@ -28,6 +32,14 @@ seguindo as três etapas principais de um fluxo de Big Data:
 
 Fluxo:  
 **Dataset → Ingestão → Armazenamento → Transformação → Output (Dataset Transformado)**  
+
+---
+
+## Resultados e Visualizações
+
+---
+
+## Conclusões
 
 ---
 
