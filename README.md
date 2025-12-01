@@ -47,8 +47,8 @@ O projeto busca alcançar isso através das seguintes etapas-chave:
 O pipeline foi implementado em **ambiente simulado (Google Colab + Google Drive)**,  
 seguindo as três etapas principais de um fluxo de Big Data:
 
-| Etapa | Descrição | Ferramentas |
-|-------|------------|-------------|
+| Etapa | Descrição | Ferramentas | Camada |
+|-------|------------|-------------|--------|
 | **Ingestão & Validação** | Leitura completa do dataset `creditcard.csv` (Kaggle) e verificação de consistência (shape, info, nulos, classes). | Python + Pandas | BRONZE |
 | **Armazenamento** | Organização dos arquivos em diretórios no Google Drive (`/BigData/dados/`). | Google Drive | BRONZE |
 | **Transformação** | Normalização das colunas Time e Amount com RobustScaler (melhor para dados com outliers).| Scikit-learn | SILVER |
