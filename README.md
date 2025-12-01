@@ -117,6 +117,22 @@ A curva ROC comparativa (Random Forest vs. XGBoost) confirma que ambos os modelo
 
 ## Conclusões
 
+Este projeto confirmou a eficácia da nossa abordagem em Machine Learning para a detecção de fraude em ambientes de dados críticos. O objetivo de construir um modelo preditivo robusto foi plenamente atingido, notadamente pela validação da nossa metodologia de ensemble em um dataset de extremo desequilíbrio.
+
+**Superando o desafio do desbalanceamento**
+
+A análise inicial reforçou a dificuldade central: a fraude representa uma fatia ínfima (apenas $\approx 0.17\%$) das transações. A falha do modelo de Regressão Logística baseado em features auto-regressivas (AR) serviu como ponto de inflexão, comprovando que a utilização incorreta das features de transação completas é o gargalo da performance.
+
+**Validação da estratégia ensemble**
+
+Ao avançarmos para a Camada Gold, a estratégia de empregar modelos de ensemble configurados para o desequilíbrio de classes se mostrou determinante:
+
+* XGBoost como Modelo Vencedor: O XGBoost, ajustado com o peso de classe (scale_pos_weight), demonstrou a maior capacidade preditiva. O modelo final alcançou um ROC AUC de 0.9820 e um Recall de 91.84% para a classe de fraude.
+
+* Este recall elevado significa que mais de 9 em cada 10 tentativas de fraude são corretamente sinalizadas pelo sistema.
+
+O pipeline de dados estabelecido (Bronze $\rightarrow$ Silver $\rightarrow$ Gold) não apenas preparou as features de forma impecável (mitigando outliers com o RobustScaler), mas também nos guiou à escolha do modelo ideal para a aplicação em tempo real. O resultado é um sistema de alta performance e confiabilidade, fundamental para mitigar perdas financeiras e validar a eficácia de algoritmos avançados na segurança de transações.
+
 ---
 
 ## ⚙️ Tecnologias Utilizadas  
